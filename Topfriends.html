@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
+ 
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Top 20 Followed People Friends in Miami'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '16px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Tweets'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Number of Tweets: <b>{point.y:.1f}</b>'
+        },
+        series: [{
+            name: 'Population',
+            data: [
+                ['NeYoCompound', 8489],
+                ['AlbertoCiurana', 7176],
+                ['OscarDLeon', 2446],
+                ['cala', 5328],
+                ['chrisbosh', 440],
+                ['GalisteuOficial', 853],
+                ['Telemundo', 930],
+                ['chiqui_delgado', 317],
+                ['alexisyfido', 1539],
+                ['VigilanteArtist', 3903],
+		['MisterCBooz', 197],
+                ['jack_welch', 149],
+                ['nacholacriatura', 158],
+                ['ferbruccoleri', 190260],
+                ['alfonsoleon10', 272],
+                ['gaston_acurio', 1172],
+                ['AppSame', 201496],
+                ['iamdelafuente', 442],
+                ['angiemartinez', 411],
+                ['RemaxAgentFL', 1098]
+            ],
+            dataLabels: {
+                //enabled: true,
+                //rotation: -00,
+                //color: 'red',
+                //align: 'center',
+                //format: '{point.y:.1f}', // one decimal
+                //y: 20, // 10 pixels down from the top
+               style: {
+                    fontSize: '9px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+
+  
+</body>
+
+
+</html>
+
+

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Suburb', 'Tweets'],
+     ['Miami',242],
+['Miami Beach',64],
+['Miami Shores',9],
+['Miami Springs',4],
+['Miamisburg',1],
+['North Miami',2],
+['North Miami Beach',3],
+['South Miami',1],
+['West Miami',1]
+        ]);
+
+        var options = {
+          title: 'fire Tweets in Suburbs',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="donutchart" style="width: 700px; height: 450px;"></div>
+  </body>
+</html>

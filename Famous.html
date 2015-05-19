@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Most Followed People with the Statistical Analytics of the Numgber of Their Friends, Favorites and Followers.'
+        },
+        xAxis: {
+            categories: ['NeYoCompound', 'AlbertoCiurana', 'OscarDLeon', 'cala', 'chrisbosh','GalisteuOficial','Telemundo','chiqui_delgado','alexisyfido','VigilanteArtist','MisterCBooz','jack_welch','nacholacriatura','ferbruccoleri','alfonsoleon10','gaston_acurio','AppSame','iamdelafuente','angiemartinez','RemaxAgentFL']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total Number of Each Metric'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y + '<br/>' +
+                    'Total: ' + this.point.stackTotal;
+            }
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Friends',
+            data: [8489, 7176, 2446, 5328, 440,853,930,317,1539,3903,197,149,158,190260,272,1172,201496,442,411,1098]
+        }, {
+            name: 'Favorites',
+            data: [136, 60, 104, 7880, 3,16,984,94,179,16637,3,60,4,7712,1236,95,5194,22,58,994]
+        }, {
+            name: 'Followers',
+            data: [6630651, 2544390, 2455030, 2221776, 2133630,2114131,1995944,1949916,1714755,1706206,1703539,1451863,1451155,1307029,1290323,1063747,1033387,967900,967457,964260]
+        }]
+    });
+});
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+  
+</body>
+
+
+</html>
+
+

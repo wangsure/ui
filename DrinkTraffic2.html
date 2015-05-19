@@ -1,0 +1,48 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1.1', {packages: ['line']});
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Days of the Month');
+      data.addColumn('number', 'smoking Tweets');
+      data.addColumn('number', 'fire Tweets');
+      //data.addColumn('number', 'Transformers: Age of Extinction');
+
+      data.addRows([
+         ['Days of the Week', 'smoking Tweets', 'fire Tweets'],
+            ['Mon',5792,582],
+['Tue',6493,716],
+['Wed',6272,705],
+['Thu',5206,497],
+['Fri',6002,606],
+['Sat',4884,462],
+['Sun',4435,426]
+      ]);
+		
+
+      var options = {
+        chart: {
+          title: 'The Relationship between smokingining and fire accidents during weekdays.',
+          subtitle: ''
+        },
+        width: 900,
+        height: 500
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+	
+  <div id="linechart_material" width="400" height="450"></div>
+	
+</body>
+</html>

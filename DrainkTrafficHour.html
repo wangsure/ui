@@ -1,0 +1,64 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1.1', {packages: ['line']});
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Days of the Week');
+      data.addColumn('number', 'smoking Tweets');
+      data.addColumn('number', 'fire Tweets');
+      //data.addColumn('number', 'Transformers: Age of Extinction');
+
+      data.addRows([
+          ['00',  2390,      294],
+          ['01',  2596,      274],
+          ['02',  2461,       256],
+          ['03',  1906,      198],
+	  ['04',  1385,      149],
+	  ['05',  855,      88],
+	  ['06',  590,      60],
+	  ['07',  377,      37],
+	  ['08',  224,      26],
+	  ['09',  386,      33],
+	  ['10',  982,      58],
+	  ['11',  1323,      103],
+	  ['12',  1559,      127],
+	  ['13',  1902,      196],
+	  ['14',  2131,      182],
+	  ['15',  2000,      187],
+	  ['16',  2008,      195],
+	  ['17',  2015,      202],
+	  ['18',  1910,      210],
+	  ['19',  1915,      210],
+	  ['20',  2030,      219],
+	  ['21',  1911,      208],
+	  ['22',  2074,      247],
+	  ['23',  2154,      235]
+        
+      ]);
+
+      var options = {
+        chart: {
+          title: 'The Relationship between smokingining and fire accidents during hours of a day.',
+          subtitle: ''
+        },
+        width: 900,
+        height: 500
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+	
+  <div id="linechart_material" width="400" height="450"></div>
+	
+</body>
+</html>

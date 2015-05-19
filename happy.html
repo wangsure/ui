@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["bar"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Days of The Week', 'Happy', 'UnHappy'],
+          ['Monday', 83667, 5723],
+          ['Tuesday', 95175, 0],
+          ['Wednesday', 91611, 6717],
+          ['Thursday', 76450, 5297],
+	  ['Friday', 82862, 5311],
+	  ['Saturday', 67966, 4000],
+	  ['Sunday', 64565, 3865]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Happiness',
+            subtitle: 'Happiness in Miami According to Days of the Week',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 700px; height: 450px;"></div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+	var mydata;
+	 $.getJSON("traffichour.json", function(json) 
+	  {
+		//alert(json.rows.length);
+	    mydata = new Array(json.rows.length);
+	    //var items = [];
+		for(i=0;i<json.rows.length; i++)
+		{
+			mydata[i] = new Array(2);
+			mydata[i][0] = json.rows[i].key;
+			mydata[i][1] = json.rows[i].value;
+		}
+	
+		    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Number of Traffic-Related Tweets'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Tweets'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Number of Tweets: <b>{point.y:.1f}</b>'
+        },
+        series: [{
+            name: 'Number of Tweets',
+            data: mydata,
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });	
+
+		
+   });
+
+	
+
+});
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 700px; height: 450px; margin: 0 auto"></div>
+
+  
+</body>
+
+
+</html>

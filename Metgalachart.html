@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+  // Some raw data (not necessarily accurate)
+  var data = google.visualization.arrayToDataTable([
+    ['Month', 'positive tweets', 'negative tweets'],
+    ['beyonce',  569,      65],
+    ['justinbieber',  2076,      171],
+    ['emmaroberts',  118,      23],
+    ['kimkardashian',  719,      194],
+    ['katyperry',  410,      14],
+    ['kerrywashington',  47,      15],
+    ['ladygaga',  94,      7],
+    ['madonna',  96,      18],
+    ['mirandakerr',  97,      8],
+    ['rihanna',  339,      55],
+    ['sarajessicaparker',  2,      0],
+    ['selenagomez',  432,      27]
+  ]);
+
+  var options = {
+    title : 'Met Gala Ceremony',
+    vAxis: {title: "Number of Tweets"},
+    hAxis: {title: "Famous People"},
+    seriesType: "bars",
+    series: {5: {type: "line"}}
+  };
+
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+    </script>
+  </head>
+  <body>
+    
+
+
+
+<div style="width: 600px; height: 500px;">
+	<table width="100%">
+	<tr>
+	<td align="top">
+		<table width="100%">
+		<tr>
+		<td align="top">
+				<div id="chart_div" style="width: 800px; height: 400px;"></div>
+		</td>
+		<td align="down">
+		<div style="width: 600px; height: 450px;">
+		<p align="justify"> </br></br></br></br></br></br></br>
+		The Met Gala, formally called the Costume Institute Gala and also known as the Met Ball, is an annual fundraising gala for the benefit of the Metropolitan Museum of Art's Costume Institute 			in New York City. This year the theme was 'China: Through the Looking Glass’.</br>
+		As we were harvesting tweets on May 4th  so it was a good idea to see what people of miami think about 
+		different celebrities looks. There was a hyped competition between Kim Kardashian and Beyonce and rihanna who was according to us wearing a ridiculous dress. 
+		Our results show that among these three kim was the winner . In addition surprisingly people were interested in Justin bieber that too in a positive sense tweeting good thing about him 
+		</p>
+		</div>
+		</td>
+	
+		</tr>
+		</table>
+	</td>
+	
+	</tr>
+	</table>
+
+
+</div>  
+  </body>
+</html>

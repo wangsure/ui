@@ -1,0 +1,54 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1.1', {packages: ['line']});
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Days of the Month');
+      data.addColumn('number', 'Drink Tweets');
+      data.addColumn('number', 'Traffic Tweets');
+      //data.addColumn('number', 'Transformers: Age of Extinction');
+
+      data.addRows([
+         ['Days of the Month', 'Drink Tweets', 'Traffic Tweets'],
+          ['May1',  156,      15],
+          ['May2',  182,      14],
+          ['May3',  178,       18],
+          ['May4',  150,      13],
+	  ['May5',  199,      7],
+	  ['May6',  295,      8],
+	  ['May7',  408,      25],
+          ['May8',  578,      35],
+          ['May9',  521,      12],
+          ['May10',  412,       15],
+          ['May11',  316,      16],
+	  ['May12',  271,      9],
+	  ['May13',  212,      13]
+      ]);
+		
+
+      var options = {
+        chart: {
+          title: 'The Relationship between drinkining and traffic accidents during weekdays.',
+          subtitle: ''
+        },
+        width: 900,
+        height: 500
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+	
+  <div id="linechart_material" width="400" height="450"></div>
+	
+</body>
+</html>

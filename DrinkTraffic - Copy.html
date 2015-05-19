@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+    <script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Days of the Week', 'Drink Tweets', 'Traffic Tweets'],
+          ['May1',  705,      15],
+          ['May2',  738,      14],
+          ['May3',  761,       18],
+          ['May4',  713,      13],
+	  ['May5',  889,      7],
+	  ['May6',  880,      8],
+	  ['May7',  773,      25],
+          ['May8',  705,      35],
+          ['May9',  738,      12],
+          ['May10',  761,       15],
+          ['May11',  713,      16],
+	  ['May12',  889,      9],
+	  ['May13',  880,      13]
+	 
+        ]);
+	14	18	13	7	8	25	35	12	15	16	9	13
+
+        var options = {
+          title: 'The Relationship between drinkining and traffic accidents during weekdays.',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>

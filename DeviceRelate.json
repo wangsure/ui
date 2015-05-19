@@ -1,0 +1,14 @@
+This is a view to compute the device usage in Miami (please use bar chart or pie chart, thanks)
+
+{"rows":[
+{"key":"Android","value":102978},
+{"key":"Android Tablets","value":4951},
+{"key":"BlackBerry","value":132},
+{"key":"BlackBerry®","value":146},
+{"key":"iPad","value":3724},
+{"key":"iPhone","value":265456},
+{"key":"Mac","value":17},
+{"key":"Third Party","value":158474},
+{"key":"Windows","value":5},
+{"key":"Windows Phone","value":822}
+]}

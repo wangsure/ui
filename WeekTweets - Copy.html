@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["bar"]});
+      google.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Days', 'Number of Tweets'],
+          ["Monday", 39436],
+          ["Tuesday", 59802],
+          ["Wednesday", 25895],
+          ["Thursday", 4678],
+	  ["Friday", 6083],
+	  ["Saturday", 5078],
+          ['Sunday', 2633]
+        ]);
+
+        var options = {
+          title: 'Tweeting During the Week',
+          width: 900,
+          legend: { position: 'none' },
+          chart: { title: 'Tweeting During the Week',
+                   subtitle: 'Daily Comparison' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Number of Tweets'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="top_x_div" style="width: 100px; height: 450px;"></div>
+  </body>
+</html>

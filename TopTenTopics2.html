@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
+ 
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Top 20 Discussed Topics in Miami'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '16px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Tweets'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Number of Tweets: <b>{point.y:.1f}</b>'
+        },
+        series: [{
+            name: 'Population',
+            data: [
+                ['miami', 9268],
+                ['job', 5832],
+                ['jobs', 5401],
+                ['hiring', 4187],
+                ['florida', 2941],
+                ['tweetmyjobs', 2770],
+                ['repost', 2197],
+                ['tbt', 2010],
+                ['mothersday', 1897],
+                ['retail', 1703],
+		['billboards', 1685],
+                ['love', 1503],
+                ['disney', 1346],
+                ['miamibeach', 1259],
+                ['happymothersday', 1244],
+                ['disneysmmc', 1196],
+                ['orlando', 1175],
+                ['sapphirenow', 1080],
+                ['reteeet', 1026],
+                ['cincodemayo', 1024]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -00,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '9px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+
+  
+</body>
+
+
+</html>
+
+

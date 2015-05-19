@@ -1,0 +1,99 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+  
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+	var mydata1;  var mydata2;
+	 $.getJSON("smokingweek.json", function(json) 
+	  {
+		//alert(json.rows.length);
+	    mydata1 = new Array(json.rows.length);
+	    //var items = [];
+		for(i=0;i<json.rows.length; i++)
+		{
+			mydata1[i] = new Array(2);
+			mydata1[i][0] = json.rows[i].key;
+			mydata1[i][1] = json.rows[i].value;
+		}
+
+
+
+	$.getJSON("fireweek.json", function(json1) 
+	  {
+		//alert(json.rows.length);
+	    mydata2 = new Array(json1.rows.length);
+	    //var items = [];
+		for(i=0;i<json1.rows.length; i++)
+		{
+			mydata2[i] = new Array(2);
+			mydata2[i][0] = json1.rows[i].key;
+			mydata2[i][1] = json1.rows[i].value;
+		}
+	
+		    
+    $('#container').highcharts({
+        title: {
+            text: 'Monthly Average Temperature',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },
+        xAxis: {
+            categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat',
+                'Sun']
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature (°C)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'smoking',
+            data: mydata1;
+        }, {
+            name: 'fire',
+            data: mydata2;
+        }]
+    });
+});
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+ <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+  
+</body>
+
+
+</html>

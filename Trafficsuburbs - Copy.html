@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Suburb', 'Tweets'],
+          ['Hyatt Regency Miami',     2],        
+          ['Miami Lakes', 2],
+          ['Miami Shores',    1],
+	  ['Miami Beach',  31],
+	  ['Miami Springs',    1],
+	  ['North Miami',    1],	  
+	  ['North Miami Beach',    1],
+	  ['Miami CBD',      26],
+	  ['South Miami',    3],
+	  ['South Miami Heights',    1]
+        ]);
+
+        var options = {
+          title: 'Traffic Tweets in Suburbs',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="donutchart" style="width: 700px; height: 450px;"></div>
+  </body>
+</html>

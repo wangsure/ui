@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  
+ 
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Top 20 Followed People in Miami'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '16px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Followers'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Number of Followers: <b>{point.y:.1f}</b>'
+        },
+        series: [{
+            name: 'Population',
+            data: [
+                ['NeYoCompound', 6630651],
+                ['AlbertoCiurana', 2544390],
+                ['OscarDLeon', 2455030],
+                ['cala', 2221776],
+                ['chrisbosh', 2133630],
+                ['GalisteuOficial', 2114131],
+                ['Telemundo', 1995944],
+                ['chiqui_delgado', 1949916],
+                ['alexisyfido', 1714755],
+                ['VigilanteArtist', 1706206],
+		['MisterCBooz', 1703539],
+                ['jack_welch', 1451863],
+                ['nacholacriatura', 1451155],
+                ['ferbruccoleri', 1307029],
+                ['alfonsoleon10', 1290323],
+                ['gaston_acurio', 1063747],
+                ['AppSame', 1033387],
+                ['iamdelafuente', 967900],
+                ['angiemartinez', 967457],
+                ['RemaxAgentFL', 964260]
+            ],
+            dataLabels: {
+                //enabled: true,
+                //rotation: -00,
+                //color: 'red',
+                //align: 'center',
+                //format: '{point.y:.1f}', // one decimal
+                //y: 20, // 10 pixels down from the top
+               style: {
+                    fontSize: '9px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+
+  
+</body>
+
+
+</html>
+
+

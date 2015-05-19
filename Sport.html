@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Sports', 'Number of Tweets'],
+          ['baseball',     2863],
+          ['basketball',      1659],
+          ['football',  2850],
+          ['hockey', 684],
+          ['soccer',    599]
+        ]);
+
+        var options = {
+          title: 'Most Mentioned Sports in Tweets',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+<div style="width: 600px; height: 500px;">
+	<table width="100%">
+	<tr>
+	<td align="top">
+		<table width="100%">
+		<tr>
+		<td align="top">
+				<div id="piechart_3d" style="width: 800px; height: 350px;"></div>
+		</td>
+		<td align="down" width="50%">
+		<div style="width: 500px; height: 450px;">
+		<p align="justify"> </br></br></br></br>
+		According to our results there is almost a tie between American football (foot is seldom used) and baseball which is mostly (90%) played just in US.
+		Despite David Beckham leading a team 'Major League Soccer expansion team' , people in miami are not that interested in soccer with only 6.9% people tweeting about it. </br> 
+
+		Florida panthers never got any title in league champion ship so people are losing interest in hockey and one factor can be weather too as in US people play ice hockey and florida is sunny 			and warm all year.  
+		Thanks to LeBron James who was an important part of Miami Heats, basketball team and led them to win league champion ship in 2012. As the pie chart shows Basketball is also quite popular 			after baseball and football. 
+		</p>
+		</div>
+		</td>
+	
+		</tr>
+		</table>
+	</td>
+	
+	</tr>
+	</table>
+
+
+</div>  
+  </body>
+</html>

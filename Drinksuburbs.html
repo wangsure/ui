@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Suburb', 'Tweets'],
+          ['Miami',1936],
+['Miami Beach',738],
+['Miami Beach Convention Center',1],
+['Miami International Airport (MIA)',2],
+['Miami Lakes',19],
+['Miami Shores',70],
+['Miami Skyline',1],
+['Miami Springs',59],
+['Miamisburg',2],
+['North Miami',24],
+['North Miami Beach',29],
+['South Miami',26],
+['South Miami Heights',46],
+['West Miami',15]
+        ]);
+
+        var options = {
+          title: 'Drink Tweets in Suburbs',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+	
+    <div id="donutchart" style="width: 700px; height: 450px;"></div>
+	
+  </body>
+</html>
